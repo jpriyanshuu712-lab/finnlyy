@@ -37,7 +37,13 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-bg-particles" id="particles"></div>
+    <div class="hero-bg-particles" id="particles">
+      <div class="glow-orb orb-1"></div>
+      <div class="glow-orb orb-2"></div>
+      <div class="glow-orb orb-3"></div>
+      <div class="glow-orb orb-4"></div>
+      <div class="bg-grid"></div>
+    </div>
     <div class="hero-content">
       <div class="hero-badge">
         <span class="badge-dot"></span>
@@ -185,7 +191,7 @@
       </div>
       <div class="founders-grid">
         <div class="founder-card glass-card">
-          <div class="founder-avatar vlad"><span>VT</span></div>
+          <div class="founder-avatar vlad"><img src="images/imagesvlad-tenev.jpg" alt="Vlad Tenev" onerror="this.style.display='none'; this.parentElement.innerHTML='&lt;span&gt;VT&lt;/span&gt;';"></div>
           <div class="founder-info">
             <h3>Vlad Tenev</h3>
             <span class="founder-role">Co-Founder &amp; CEO</span>
@@ -202,7 +208,7 @@
           </div>
         </div>
         <div class="founder-card glass-card">
-          <div class="founder-avatar baiju"><span>BB</span></div>
+          <div class="founder-avatar baiju"><img src="images/bhattbaiju012516tj-5_900xx6807-3829-0-357.jpg" alt="Baiju Bhatt" onerror="this.style.display='none'; this.parentElement.innerHTML='&lt;span&gt;BB&lt;/span&gt;';"></div>
           <div class="founder-info">
             <h3>Baiju Bhatt</h3>
             <span class="founder-role">Co-Founder &amp; Former Co-CEO</span>
@@ -244,6 +250,43 @@
         <p>Robinhood's genius lies in its counterintuitive proposition: <strong>charge users nothing to trade, yet generate billions in revenue.</strong> The trick is that "free" only means free at the point of sale — the money still comes from somewhere, just not directly out of the customer's pocket for each trade.</p>
         <p>In practice, four different parties end up paying: <strong>market makers</strong> pay Robinhood a small rebate to execute customer orders, <strong>Gold subscribers</strong> pay a monthly fee for premium features, <strong>borrowers and idle cash</strong> generate interest income (from margin loans and bank cash sweeps), and <strong>merchants</strong> pay interchange fees whenever someone swipes the Gold Card. No single stream is huge on its own — together, they add up to billions and forced the entire US brokerage industry to drop commissions to match.</p>
       </div>
+
+      <!-- ANIMATED EXPLAINER "VIDEO" -->
+      <div class="explainer-video glass-card" id="explainerVideo">
+        <div class="explainer-header">
+          <h3>🎬 Watch: How Robinhood Actually Makes Money</h3>
+          <p>A narrated 60-second walkthrough — press play (sound on)</p>
+        </div>
+        <div class="explainer-stage" id="explainerStage" data-step="0">
+          <div class="explainer-flow">
+            <div class="flow-node" id="nodeUser"><div class="flow-icon">👤</div><div class="flow-label">You</div></div>
+            <div class="flow-track">
+              <div class="flow-line"></div>
+              <div class="flow-dot" id="flowDotOut"></div>
+              <div class="flow-dot money" id="flowDotIn"></div>
+            </div>
+            <div class="flow-node" id="nodeRH"><div class="flow-icon">🏹</div><div class="flow-label">Robinhood</div></div>
+            <div class="flow-track">
+              <div class="flow-line"></div>
+              <div class="flow-dot" id="flowDotOut2"></div>
+              <div class="flow-dot money" id="flowDotIn2"></div>
+            </div>
+            <div class="flow-node" id="nodeCounterparty"><div class="flow-icon" id="counterpartyIcon">💤</div><div class="flow-label" id="counterpartyLabel">Waiting…</div></div>
+          </div>
+          <div class="explainer-counter">
+            <span class="counter-label">Illustrative revenue building up</span>
+            <span class="counter-value" id="explainerCounter">$0</span>
+          </div>
+          <div class="explainer-subtitle" id="explainerSubtitle">Press play to start the walkthrough.</div>
+        </div>
+        <div class="explainer-controls">
+          <button id="explainerPlayBtn" class="explainer-play-btn">▶ Play</button>
+          <div class="explainer-progress" id="explainerProgressBar"><div class="explainer-progress-fill" id="explainerProgressFill"></div></div>
+          <span class="explainer-step-count" id="explainerStepCount">Step 0 / 7</span>
+          <button id="explainerMuteBtn" class="explainer-mute-btn" title="Toggle voice">🔊</button>
+        </div>
+      </div>
+
       <div class="revenue-streams">
         <div class="revenue-card glass-card primary-revenue">
           <div class="revenue-rank">01</div>
