@@ -135,24 +135,68 @@ function animateCounter(el, target, suffix = '') {
   }, 16);
 }
 
-// ── Ticker animation for chart price ──
-function animateChartPrice() {
-  const priceEl = document.querySelector('.chart-price');
+// ── Live HOOD stock price (real NASDAQ data) ──
+//
+// This pulls the real, current HOOD quote from Finnhub's free stock API.
+// To activate it:
+//   1. Get a free API key at https://finnhub.io/register (no credit card, 60 requests/min)
+//   2. Paste it below as FINNHUB_API_KEY
+// Without a key, the ticker shows a fixed last-known closing price instead of
+// a fake animation, so nothing here is ever misleading.
+const FINNHUB_API_KEY = 'd9d0vapr01qvnjr0phv0d9d0vapr01qvnjr0phvg'; // <-- paste your free Finnhub API key here
+const HOOD_LAST_KNOWN_PRICE = 113.55; // fallback close price, used only if no live key/connection
+const HOOD_LAST_KNOWN_DATE = 'Jul 16, 2026';
+
+function setStaticFallbackPrice(reason) {
+  const priceEl = document.getElementById('heroPrice');
+  const changeEl = document.getElementById('heroChange');
+  const statusEl = document.getElementById('heroPriceStatus');
+  const updatedEl = document.getElementById('heroPriceUpdated');
   if (!priceEl) return;
-  let base = 47.23;
-  setInterval(() => {
-    const delta = (Math.random() - 0.48) * 0.3;
-    base = Math.max(40, Math.min(60, base + delta));
-    priceEl.textContent = '$' + base.toFixed(2);
-    const changeEl = document.querySelector('.chart-change');
+  priceEl.textContent = '$' + HOOD_LAST_KNOWN_PRICE.toFixed(2);
+  if (changeEl) { changeEl.textContent = 'Prev. Close'; changeEl.className = 'chart-change'; }
+  if (statusEl) statusEl.textContent = 'NASDAQ: HOOD';
+  if (updatedEl) updatedEl.textContent = reason || ('Last close: ' + HOOD_LAST_KNOWN_DATE);
+}
+
+async function fetchLiveHoodPrice() {
+  const priceEl = document.getElementById('heroPrice');
+  const changeEl = document.getElementById('heroChange');
+  const statusEl = document.getElementById('heroPriceStatus');
+  const updatedEl = document.getElementById('heroPriceUpdated');
+  if (!priceEl) return;
+
+  if (!FINNHUB_API_KEY) {
+    setStaticFallbackPrice('Add a free Finnhub API key for live data');
+    return;
+  }
+
+  try {
+    const res = await fetch(`https://finnhub.io/api/v1/quote?symbol=HOOD&token=${FINNHUB_API_KEY}`);
+    if (!res.ok) throw new Error('Request failed');
+    const data = await res.json();
+    // data.c = current price, data.dp = percent change on the day
+    if (typeof data.c !== 'number' || data.c === 0) throw new Error('No data returned');
+
+    priceEl.textContent = '$' + data.c.toFixed(2);
+    const pct = data.dp;
     if (changeEl) {
-      const pct = ((base - 46.12) / 46.12 * 100).toFixed(2);
-      changeEl.textContent = (pct >= 0 ? '+' : '') + pct + '%';
+      changeEl.textContent = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
       changeEl.className = 'chart-change ' + (pct >= 0 ? 'positive' : 'negative');
     }
-  }, 2000);
+    if (statusEl) statusEl.textContent = '🟢 LIVE — NASDAQ: HOOD';
+    if (updatedEl) {
+      const now = new Date();
+      updatedEl.textContent = 'Updated ' + now.toLocaleTimeString();
+    }
+  } catch (err) {
+    console.warn('Live price fetch failed, showing last known price instead:', err);
+    setStaticFallbackPrice('Live data unavailable — showing last close');
+  }
 }
-animateChartPrice();
+
+fetchLiveHoodPrice();
+setInterval(fetchLiveHoodPrice, 60000); // refresh every 60s, within Finnhub's free rate limit
 
 // ── Timeline stagger animation ──
 const timelineItems = document.querySelectorAll('.timeline-item');
