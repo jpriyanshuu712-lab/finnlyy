@@ -57,16 +57,21 @@ window.addEventListener('scroll', updateActiveNav);
 function createParticles() {
   const container = document.getElementById('particles');
   if (!container) return;
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < 140; i++) {
     const p = document.createElement('div');
+    const size = Math.random() * 3 + 1;
+    const isBig = Math.random() > 0.85;
+    const finalSize = isBig ? size * 2.2 : size;
+    const opacity = Math.random() * 0.5 + 0.15;
     p.style.cssText = `
       position: absolute;
-      width: ${Math.random() * 3 + 1}px;
-      height: ${Math.random() * 3 + 1}px;
-      background: rgba(0, 200, 83, ${Math.random() * 0.4 + 0.1});
+      width: ${finalSize}px;
+      height: ${finalSize}px;
+      background: rgba(${isBig ? '105, 240, 174' : '0, 200, 83'}, ${opacity});
       border-radius: 50%;
       left: ${Math.random() * 100}%;
       top: ${Math.random() * 100}%;
+      box-shadow: 0 0 ${finalSize * 3}px ${finalSize}px rgba(0, 200, 83, ${opacity * 0.5});
       animation: particleFloat ${Math.random() * 15 + 10}s ease-in-out infinite;
       animation-delay: ${Math.random() * -15}s;
     `;
@@ -281,3 +286,183 @@ document.querySelectorAll('.stat-pill').forEach(pill => {
 
 console.log('%c🏹 RobinhoodHQ — Fintech Repository Loaded', 'color: #00c853; font-size: 16px; font-weight: bold;');
 console.log('%cBuilt for academic excellence in FinTech', 'color: #69f0ae; font-size: 12px;');
+
+// ── Animated "Video" Explainer: How Robinhood Makes Money ──
+// Uses the browser's built-in speech synthesis for real spoken narration
+// (no external audio file needed) synced with on-screen subtitles and an
+// animated flow diagram. If the browser doesn't support speech synthesis,
+// it gracefully falls back to timed subtitles with no voice.
+(function () {
+  const playBtn = document.getElementById('explainerPlayBtn');
+  const muteBtn = document.getElementById('explainerMuteBtn');
+  if (!playBtn) return; // section not present
+
+  const subtitleEl = document.getElementById('explainerSubtitle');
+  const stageEl = document.getElementById('explainerStage');
+  const progressFill = document.getElementById('explainerProgressFill');
+  const stepCountEl = document.getElementById('explainerStepCount');
+  const counterEl = document.getElementById('explainerCounter');
+  const counterpartyIcon = document.getElementById('counterpartyIcon');
+  const counterpartyLabel = document.getElementById('counterpartyLabel');
+  const nodeUser = document.getElementById('nodeUser');
+  const nodeRH = document.getElementById('nodeRH');
+  const nodeCounterparty = document.getElementById('nodeCounterparty');
+  const dotOut1 = document.getElementById('flowDotOut');
+  const dotIn1 = document.getElementById('flowDotIn');
+  const dotOut2 = document.getElementById('flowDotOut2');
+  const dotIn2 = document.getElementById('flowDotIn2');
+
+  const steps = [
+    {
+      text: "Robinhood charges zero commission on every trade. So how does it make four point five billion dollars a year? Let's break it down, one revenue stream at a time.",
+      icon: '🏹', label: 'Robinhood', flow: null, add: 0
+    },
+    {
+      text: "First: Payment for Order Flow. When you place a trade, Robinhood routes it to a market maker instead of straight to the stock exchange. That market maker pays Robinhood a tiny rebate for the right to fill your order.",
+      icon: '🏦', label: 'Market Maker', flow: 'out', add: 40
+    },
+    {
+      text: "It's a fraction of a cent per share. But across millions of trades every single day, those fractions add up to hundreds of millions of dollars a year.",
+      icon: '🏦', label: 'Market Maker', flow: 'in', add: 60
+    },
+    {
+      text: "Second: Robinhood Gold. Four point two million users pay five dollars a month for perks like higher interest on cash and bigger IRA matches.",
+      icon: '⭐', label: 'Gold Subscribers', flow: 'out', add: 50
+    },
+    {
+      text: "Third: Interest income. When you borrow to trade on margin, you pay interest. And your uninvested cash gets swept to partner banks, who pay Robinhood a cut too.",
+      icon: '🏛️', label: 'Banks & Borrowers', flow: 'in', add: 70
+    },
+    {
+      text: "Fourth: crypto trades carry a small spread, the gap between the buy and sell price, which Robinhood quietly pockets on every transaction.",
+      icon: '₿', label: 'Crypto Traders', flow: 'in', add: 45
+    },
+    {
+      text: "Fifth: every swipe of the Gold Card earns Robinhood a merchant interchange fee, a slice of which funds your three percent cash back.",
+      icon: '💳', label: 'Card Merchants', flow: 'in', add: 35
+    },
+    {
+      text: "None of these fees are visible to you as a user. That's the whole point. Robinhood makes money quietly in the background, while keeping trading free up front.",
+      icon: '🏹', label: 'Robinhood', flow: null, add: 20
+    }
+  ];
+
+  let isPlaying = false;
+  let isMuted = false;
+  let currentStep = 0;
+  let runningTotal = 0;
+  const synthAvailable = 'speechSynthesis' in window;
+
+  function setActiveNodes(flow) {
+    nodeUser.classList.remove('active');
+    nodeRH.classList.remove('active');
+    nodeCounterparty.classList.remove('active');
+    [dotOut1, dotIn1, dotOut2, dotIn2].forEach(d => d.classList.remove('run-right', 'run-left'));
+    if (flow === 'out') {
+      nodeUser.classList.add('active');
+      nodeRH.classList.add('active');
+      dotOut1.classList.add('run-right');
+      setTimeout(() => { dotOut2.classList.add('run-right'); nodeCounterparty.classList.add('active'); }, 300);
+    } else if (flow === 'in') {
+      nodeCounterparty.classList.add('active');
+      nodeRH.classList.add('active');
+      dotIn2.classList.add('run-left');
+      setTimeout(() => { dotIn1.classList.add('run-left'); nodeUser.classList.add('active'); }, 300);
+    } else {
+      nodeRH.classList.add('active');
+    }
+  }
+
+  function playStep(index) {
+    if (index >= steps.length) {
+      finishPlayback();
+      return;
+    }
+    currentStep = index;
+    const step = steps[index];
+    subtitleEl.textContent = step.text;
+    counterpartyIcon.textContent = step.icon;
+    counterpartyLabel.textContent = step.label;
+    setActiveNodes(step.flow);
+    runningTotal += step.add;
+    counterEl.textContent = '$' + runningTotal + 'M';
+    progressFill.style.width = ((index + 1) / steps.length * 100) + '%';
+    stepCountEl.textContent = `Step ${index + 1} / ${steps.length}`;
+
+    if (synthAvailable && !isMuted) {
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(step.text);
+      utter.rate = 1.0;
+      utter.pitch = 1.0;
+      utter.onend = () => { if (isPlaying) playStep(index + 1); };
+      utter.onerror = () => { if (isPlaying) setTimeout(() => playStep(index + 1), 4000); };
+      window.speechSynthesis.speak(utter);
+    } else {
+      // No voice: advance on a timer sized to the text length
+      const duration = Math.max(3500, step.text.length * 55);
+      setTimeout(() => { if (isPlaying) playStep(index + 1); }, duration);
+    }
+  }
+
+  function finishPlayback() {
+    isPlaying = false;
+    playBtn.textContent = '↻ Replay';
+    subtitleEl.textContent = "That's the full picture — five quiet revenue streams behind one free trading app.";
+    nodeUser.classList.remove('active');
+    nodeRH.classList.add('active');
+    nodeCounterparty.classList.remove('active');
+  }
+
+  function cumulativeTotalBefore(index) {
+    let sum = 0;
+    for (let i = 0; i < index; i++) sum += steps[i].add;
+    return sum;
+  }
+
+  function jumpToStep(index) {
+    index = Math.max(0, Math.min(steps.length - 1, index));
+    if (synthAvailable) window.speechSynthesis.cancel();
+    runningTotal = cumulativeTotalBefore(index);
+    isPlaying = true;
+    playBtn.textContent = '⏸ Pause';
+    playStep(index);
+  }
+
+  const progressBar = document.getElementById('explainerProgressBar') || playBtn.closest('.explainer-controls').querySelector('.explainer-progress');
+  if (progressBar) {
+    progressBar.addEventListener('click', (e) => {
+      const rect = progressBar.getBoundingClientRect();
+      const ratio = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
+      const targetIndex = Math.min(steps.length - 1, Math.floor(ratio * steps.length));
+      jumpToStep(targetIndex);
+    });
+  }
+
+  playBtn.addEventListener('click', () => {
+    if (isPlaying) {
+      // Pause
+      isPlaying = false;
+      playBtn.textContent = '▶ Resume';
+      if (synthAvailable) window.speechSynthesis.pause();
+      return;
+    }
+    if (playBtn.textContent.includes('Resume') && synthAvailable && window.speechSynthesis.paused) {
+      isPlaying = true;
+      playBtn.textContent = '⏸ Pause';
+      window.speechSynthesis.resume();
+      return;
+    }
+    // Start fresh or replay
+    isPlaying = true;
+    playBtn.textContent = '⏸ Pause';
+    runningTotal = 0;
+    if (synthAvailable) window.speechSynthesis.cancel();
+    playStep(0);
+  });
+
+  muteBtn.addEventListener('click', () => {
+    isMuted = !isMuted;
+    muteBtn.textContent = isMuted ? '🔇' : '🔊';
+    if (isMuted && synthAvailable) window.speechSynthesis.cancel();
+  });
+})();
