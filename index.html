@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Robinhood – The Fintech Revolution | Complete Company Repository</title>
-  <meta name="description" content="A comprehensive academic repository on Robinhood – exploring the business model, founder story, fintech impact, revenue streams, controversies, and future of America's most disruptive trading platform." />
+  <meta name="description" content="A comprehensive academic repository on Robinhood – exploring the friction it solved, its founder story, business model, global scale, and status today as America's most disruptive trading platform." />
   <meta name="keywords" content="Robinhood, fintech, Vlad Tenev, Baiju Bhatt, commission-free trading, PFOF, democratize finance, IPO, stock trading, cryptocurrency" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,13 +22,12 @@
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#overview">Overview</a></li>
+        <li><a href="#friction">The Friction</a></li>
         <li><a href="#founders">Founders</a></li>
-        <li><a href="#timeline">Timeline</a></li>
         <li><a href="#business">Business Model</a></li>
-        <li><a href="#products">Products</a></li>
+        <li><a href="#geography">Geography &amp; Scale</a></li>
+        <li><a href="#status">Status Today</a></li>
         <li><a href="#financials">Financials</a></li>
-        <li><a href="#controversies">Controversies</a></li>
-        <li><a href="#future">Future</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -66,8 +65,8 @@
       <div class="hero-chart-card">
         <div class="chart-header">
           <span class="chart-ticker">HOOD</span>
-          <span class="chart-price">$47.23</span>
-          <span class="chart-change positive">+2.4%</span>
+          <span class="chart-price" id="heroPrice">$113.55</span>
+          <span class="chart-change positive" id="heroChange">—</span>
         </div>
         <div class="mini-chart">
           <svg viewBox="0 0 200 60" preserveAspectRatio="none">
@@ -82,8 +81,8 @@
           </svg>
         </div>
         <div class="chart-meta">
-          <span>Total Platform Assets</span>
-          <span class="positive">↑ 68% YoY</span>
+          <span id="heroPriceStatus">NASDAQ: HOOD</span>
+          <span class="positive" id="heroPriceUpdated">Loading live price…</span>
         </div>
       </div>
       <div class="hero-float-badge badge-1">🏦 FDIC Member</div>
@@ -135,6 +134,42 @@
           <div class="fintech-item"><div class="fi-icon">🏦</div><h4>Robo-Advisory</h4><p>Robinhood Strategies offers managed portfolios with automatic rebalancing at just 0.25% AUM fee, waived for Gold subscribers over $100K.</p></div>
           <div class="fintech-item"><div class="fi-icon">📱</div><h4>Mobile-First UX</h4><p>Gamified, intuitive UI/UX that made investing feel like an app — attracting millions of first-time investors through its seamless onboarding.</p></div>
           <div class="fintech-item"><div class="fi-icon">🤖</div><h4>AI Trading (Emerging)</h4><p>Introducing AI-powered "agentic" trading capabilities and the Legend desktop platform for professional-grade analytics and execution.</p></div>
+        </div>
+      </div>
+      <h3 style="font-size:1.3rem; margin:48px 0 24px; text-align:center;">🕒 The Journey, at a Glance</h3>
+      <div class="timeline">
+        <div class="timeline-item left"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2013</span><h4>🚀 Founded</h4><p>Incorporated in Menlo Park, CA. $3M seed round raised.</p></div></div>
+        <div class="timeline-item right"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2015</span><h4>🌐 Public Launch</h4><p>App opens to everyone; 1M users by year-end.</p></div></div>
+        <div class="timeline-item left"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2019</span><h4>🏦 Industry Tipping Point</h4><p>Schwab, TD Ameritrade &amp; E*Trade drop commissions to $0.</p></div></div>
+        <div class="timeline-item right"><div class="timeline-dot"></div><div class="timeline-content glass-card negative"><span class="timeline-year">Jan 2021</span><h4>⚠️ GameStop Crisis</h4><p>Trading restrictions spark backlash and congressional hearings.</p></div></div>
+        <div class="timeline-item left"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">Jul 2021</span><h4>🎉 IPO on NASDAQ</h4><p>Goes public at $38/share, ~$32B valuation.</p></div></div>
+        <div class="timeline-item right"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2024</span><h4>🌍 Global Push</h4><p>Acquires Bitstamp ($200M), launches in the EU.</p></div></div>
+        <div class="timeline-item left"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2025</span><h4>🏆 Record Year</h4><p>$4.5B revenue, $324B platform assets, AI trading launches.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FRICTION -->
+  <section class="section" id="friction">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">01 · The Friction</span>
+        <h2 class="section-title">A Market Built for the <span class="gradient-text">Wealthy Few</span></h2>
+        <p class="section-desc">The specific problem that existed before Robinhood — and who felt it most</p>
+      </div>
+      <div class="overview-grid">
+        <div class="overview-main glass-card">
+          <div class="card-icon-lg">🚧</div>
+          <h3>The Problem: Investing Had a Price Tag Only the Rich Could Afford</h3>
+          <p>Before 2013, buying stock in the United States meant paying a legacy broker like Charles Schwab, E*Trade, or TD Ameritrade a flat commission of <strong>$7–$10 per trade</strong> — regardless of whether you were buying $50 or $50,000 worth of shares. Many brokers also demanded <strong>account minimums of $500–$2,000</strong> just to open a door that Wall Street insiders walked through for free.</p>
+          <p>The people who felt this most acutely were <strong>young, first-time, and low-income investors</strong> — students, hourly workers, and recent graduates who had $50 or $100 to invest but watched a third of it disappear in fees before they'd even bought a share. For them, the math simply didn't work: a $10 commission on a $100 trade is a 10% tax on entry, so most simply stayed out of the market entirely.</p>
+          <p>The founders saw the other side of that gap up close. While building high-frequency trading software for hedge funds, Vlad Tenev and Baiju Bhatt watched institutional trading desks pay <strong>fractions of a cent</strong> per trade — while ordinary Americans a few miles away were quoted $10. That asymmetry, not a business-school case study, was the spark.</p>
+        </div>
+        <div class="overview-facts">
+          <div class="fact-card glass-card"><div class="fact-icon">💵</div><div class="fact-content"><span class="fact-label">Typical Commission (pre-2013)</span><span class="fact-value">$7 – $10 per trade</span></div></div>
+          <div class="fact-card glass-card"><div class="fact-icon">🔒</div><div class="fact-content"><span class="fact-label">Typical Account Minimum</span><span class="fact-value">$500 – $2,000</span></div></div>
+          <div class="fact-card glass-card"><div class="fact-icon">🏛️</div><div class="fact-content"><span class="fact-label">Institutional Cost per Trade</span><span class="fact-value">Near $0</span></div></div>
+          <div class="fact-card glass-card"><div class="fact-icon">🎓</div><div class="fact-content"><span class="fact-label">Hit Hardest</span><span class="fact-value">Students, first-time &amp; low-income investors</span></div></div>
         </div>
       </div>
     </div>
@@ -197,33 +232,8 @@
     </div>
   </section>
 
-  <!-- TIMELINE -->
-  <section class="section" id="timeline">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Company History</span>
-        <h2 class="section-title">The Robinhood <span class="gradient-text">Timeline</span></h2>
-        <p class="section-desc">Key milestones from garage startup to financial giant</p>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item left"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2013</span><h4>🚀 Founded</h4><p>Robinhood Markets, Inc. incorporated on April 18. Initial seed funding of $3M raised from Index Ventures and others. The company is based in Menlo Park, California.</p></div></div>
-        <div class="timeline-item right"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2014</span><h4>📱 iOS App Launch</h4><p>Robinhood launches its iPhone app in March 2014 to early beta users. The app receives Apple's Design Award for its clean, intuitive interface — a huge differentiator from legacy brokerage apps.</p></div></div>
-        <div class="timeline-item left"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2015</span><h4>🌐 Public Launch</h4><p>Robinhood launches to the general public in March 2015. By year-end, 1 million users have accounts. Series A funding of $13M raised. Android app released.</p></div></div>
-        <div class="timeline-item right"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2016–2017</span><h4>💰 Robinhood Gold &amp; Growth</h4><p>Launches Robinhood Gold (premium subscription) in September 2016. Reaches 2 million users. Series B and C funding raise $110M total. Options trading introduced in 2017.</p></div></div>
-        <div class="timeline-item left"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2018</span><h4>₿ Crypto Trading Launches</h4><p>Robinhood announces cryptocurrency trading in January 2018 — the app crashes from demand overload. Waitlist reaches 1.25 million in hours. Becomes first major broker to offer free crypto trading.</p></div></div>
-        <div class="timeline-item right"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2019</span><h4>🏦 Cash Management &amp; Industry Disruption</h4><p>Launches cash management. Series D and E funding reaches $1.3B total raised, valuing the company at $7.6 billion. In October, Charles Schwab, TD Ameritrade, and E*Trade all drop trading commissions to zero — directly because of Robinhood's pressure.</p></div></div>
-        <div class="timeline-item left"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2020</span><h4>📈 Pandemic Boom</h4><p>COVID-19 pandemic triggers a massive wave of retail investing. Robinhood adds 3 million new accounts in Q1 2020 alone. Total users surpass 13 million. A critical outage during market volatility triggers regulatory scrutiny.</p></div></div>
-        <div class="timeline-item right"><div class="timeline-dot"></div><div class="timeline-content glass-card negative"><span class="timeline-year">Jan 2021</span><h4>⚠️ GameStop Crisis</h4><p>The meme stock frenzy over GameStop (GME) erupts. Robinhood controversially restricts buying of GME and other stocks to manage clearinghouse deposit requirements. The move sparks massive public backlash, congressional hearings, class-action lawsuits, and intense regulatory scrutiny.</p></div></div>
-        <div class="timeline-item left"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">Jul 2021</span><h4>🎉 IPO on NASDAQ</h4><p>Robinhood goes public on NASDAQ under the ticker "HOOD" on July 29, 2021, at $38/share, valuing the company at approximately $32 billion. 25% of IPO shares were reserved for retail investors on the Robinhood platform itself.</p></div></div>
-        <div class="timeline-item right"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2022–2023</span><h4>📉 Market Downturn &amp; Restructuring</h4><p>Crypto winter and bear market reduce trading volumes. Robinhood lays off ~23% of staff in April 2022. Launches IRA accounts with 1% matching contribution. UK expansion begins. Acquires credit card startup X1 for $95M.</p></div></div>
-        <div class="timeline-item left"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2024</span><h4>🌟 Gold Card &amp; Global Expansion</h4><p>Launches the Robinhood Gold Credit Card with 3% unlimited cashback. Acquires Bitstamp (major crypto exchange) for $200M to accelerate international expansion. Launches in the EU. Revenue reaches $2.95B. Acquires TradePMR wealth management platform.</p></div></div>
-        <div class="timeline-item right"><div class="timeline-dot"></div><div class="timeline-content glass-card"><span class="timeline-year">2025</span><h4>🏆 Record Growth &amp; AI</h4><p>Revenue surges to $4.5 billion. Net income hits $1.9 billion. Platform assets reach $324 billion (↑68% YoY). Introduces AI-powered "agentic" trading. Robinhood Gold subscribers reach 4.2 million. Launches Legend desktop trading platform.</p></div></div>
-      </div>
-    </div>
-  </section>
-
   <!-- BUSINESS MODEL -->
-  <section class="section section-dark" id="business">
+  <section class="section" id="business">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Business Model</span>
@@ -231,16 +241,17 @@
         <p class="section-desc">The "free" platform that generates billions through clever financial engineering</p>
       </div>
       <div class="biz-intro glass-card">
-        <p>Robinhood's genius lies in its counterintuitive proposition: <strong>charge users nothing, yet generate billions in revenue.</strong> The platform offers zero-commission trading, but has built sophisticated revenue streams that most users never see. This model forced the entire US brokerage industry to restructure.</p>
+        <p>Robinhood's genius lies in its counterintuitive proposition: <strong>charge users nothing to trade, yet generate billions in revenue.</strong> The trick is that "free" only means free at the point of sale — the money still comes from somewhere, just not directly out of the customer's pocket for each trade.</p>
+        <p>In practice, four different parties end up paying: <strong>market makers</strong> pay Robinhood a small rebate to execute customer orders, <strong>Gold subscribers</strong> pay a monthly fee for premium features, <strong>borrowers and idle cash</strong> generate interest income (from margin loans and bank cash sweeps), and <strong>merchants</strong> pay interchange fees whenever someone swipes the Gold Card. No single stream is huge on its own — together, they add up to billions and forced the entire US brokerage industry to drop commissions to match.</p>
       </div>
       <div class="revenue-streams">
         <div class="revenue-card glass-card primary-revenue">
           <div class="revenue-rank">01</div>
           <div class="revenue-icon">🔄</div>
           <h3>Payment for Order Flow (PFOF)</h3>
-          <div class="revenue-badge">Primary Revenue Stream</div>
-          <p>When a Robinhood user places a trade, that order is <strong>routed to a market maker</strong> (like Citadel Securities or Virtu Financial) rather than directly to a stock exchange. The market maker executes the trade and pays Robinhood a small rebate — typically fractions of a cent per share.</p>
-          <p>While each rebate is tiny, millions of daily trades add up to hundreds of millions of dollars annually.</p>
+          <div class="revenue-badge">Primary Revenue Stream · Who pays: Market makers</div>
+          <p>When a Robinhood user places a trade, that order is <strong>routed to a market maker</strong> (like Citadel Securities or Virtu Financial) rather than directly to a stock exchange. The market maker executes the trade and pays Robinhood a small rebate — typically fractions of a cent per share — in exchange for the right to fill that order.</p>
+          <p>While each rebate is tiny, millions of daily trades add up to hundreds of millions of dollars annually. This is the mechanism that makes "commission-free" trading possible in the first place.</p>
           <div class="revenue-mechanics">
             <div class="mechanic">
               <span class="mechanic-step">User places order</span>
@@ -252,14 +263,14 @@
               <span class="mechanic-step">User gets trade executed</span>
             </div>
           </div>
-          <div class="revenue-note">⚠️ Controversial: Critics argue PFOF creates a conflict of interest. The EU has banned PFOF, affecting Robinhood's international model.</div>
+          <div class="revenue-note">⚠️ Controversial: Critics argue PFOF creates a conflict of interest, since Robinhood is paid more for order volume than for getting users the best price. The EU has banned PFOF outright, which is why Robinhood's European business (via Bitstamp) can't rely on this stream.</div>
         </div>
         <div class="revenue-grid-2">
           <div class="revenue-card glass-card">
             <div class="revenue-rank">02</div>
             <div class="revenue-icon">⭐</div>
             <h3>Robinhood Gold Subscription</h3>
-            <p>$5/month or $50/year for premium features:</p>
+            <p><strong>Who pays:</strong> power users who opt into a $5/month or $50/year premium tier, in exchange for:</p>
             <ul class="feature-list">
               <li>Higher APY on uninvested cash (3.35%)</li>
               <li>3% IRA match (vs 1% standard)</li>
@@ -273,11 +284,11 @@
             <div class="revenue-rank">03</div>
             <div class="revenue-icon">🏦</div>
             <h3>Net Interest Income</h3>
-            <p>Robinhood earns interest in multiple ways:</p>
+            <p><strong>Who pays:</strong> borrowers and, indirectly, partner banks. Robinhood earns interest in three ways:</p>
             <ul class="feature-list">
-              <li><strong>Margin Lending:</strong> Charges interest when users borrow to trade on margin</li>
-              <li><strong>Cash Sweeps:</strong> Sweeps uninvested cash to partner banks and earns the spread</li>
-              <li><strong>Securities Lending:</strong> Lends customer shares to short sellers</li>
+              <li><strong>Margin Lending:</strong> interest charged when users borrow to trade</li>
+              <li><strong>Cash Sweeps:</strong> uninvested cash parked at partner banks, Robinhood keeps the spread</li>
+              <li><strong>Securities Lending:</strong> customer shares lent to short sellers for a fee</li>
             </ul>
             <div class="revenue-stat">Largest segment in 2024–25</div>
           </div>
@@ -285,50 +296,88 @@
             <div class="revenue-rank">04</div>
             <div class="revenue-icon">₿</div>
             <h3>Crypto Transaction Revenue</h3>
-            <p>Robinhood earns a spread on cryptocurrency trades — the difference between buy and sell prices. This spread-based model generates significant revenue as crypto volumes grow, especially during bull markets.</p>
+            <p><strong>Who pays:</strong> crypto traders, via a spread built into the price. Robinhood earns the difference between what a buyer pays and what a seller receives on every crypto trade — no visible commission, but a markup baked into the quoted price.</p>
             <div class="revenue-stat">$358M in Q4 2024 alone</div>
           </div>
           <div class="revenue-card glass-card">
             <div class="revenue-rank">05</div>
             <div class="revenue-icon">💳</div>
             <h3>Gold Card Interchange &amp; Partnerships</h3>
-            <p>The Robinhood Gold Card generates revenue through <strong>interchange fees</strong> (merchant fees on card transactions), credit interest, and financial partnerships. The card's 3% unlimited cashback is funded by these interchange fees.</p>
+            <p><strong>Who pays:</strong> merchants, not cardholders. Every time a Gold Card is swiped, the merchant pays an interchange fee to the card network, and Robinhood takes a cut. That cut funds the card's 3% unlimited cashback, plus a share of credit interest and partnership revenue.</p>
             <div class="revenue-stat">Fastest growing segment</div>
           </div>
         </div>
       </div>
       <div class="value-canvas glass-card">
-        <h3>📊 Business Model Canvas</h3>
+        <h3>📊 Business Model at a Glance</h3>
         <div class="canvas-grid">
-          <div class="canvas-item"><h4>👥 Customer Segments</h4><ul><li>Millennial &amp; Gen-Z investors</li><li>First-time investors</li><li>Active day traders</li><li>Crypto enthusiasts</li><li>Retirement savers</li></ul></div>
-          <div class="canvas-item"><h4>💎 Value Propositions</h4><ul><li>Zero-commission trading</li><li>No account minimums</li><li>Fractional shares</li><li>All-in-one financial platform</li><li>Simple, beautiful UX</li></ul></div>
-          <div class="canvas-item"><h4>📡 Channels</h4><ul><li>iOS &amp; Android mobile apps</li><li>Web platform (robinhood.com)</li><li>Legend desktop platform</li><li>Social media &amp; referrals</li></ul></div>
-          <div class="canvas-item"><h4>🤝 Key Partners</h4><ul><li>Market makers (Citadel, Virtu)</li><li>Clearing houses (DTCC)</li><li>Partner banks (for cash sweep)</li><li>Visa (Gold Card network)</li><li>Bitstamp (crypto)</li></ul></div>
-          <div class="canvas-item"><h4>⚙️ Key Activities</h4><ul><li>Platform development &amp; AI</li><li>Regulatory compliance</li><li>Customer acquisition</li><li>Risk management</li><li>International expansion</li></ul></div>
-          <div class="canvas-item"><h4>💸 Cost Structure</h4><ul><li>Technology infrastructure</li><li>Regulatory/compliance costs</li><li>Marketing &amp; user acquisition</li><li>Customer support</li><li>Clearing &amp; settlement</li></ul></div>
+          <div class="canvas-item"><h4>👥 Who Uses It</h4><ul><li>Millennial &amp; Gen-Z first-time investors</li><li>Active traders &amp; crypto enthusiasts</li><li>Retirement savers</li></ul></div>
+          <div class="canvas-item"><h4>💎 Why They Choose It</h4><ul><li>Zero-commission trading, no minimums</li><li>Fractional shares from $1</li><li>One app for stocks, crypto &amp; banking</li></ul></div>
+          <div class="canvas-item"><h4>🤝 Who Robinhood Depends On</h4><ul><li>Market makers (Citadel, Virtu)</li><li>Partner banks (cash sweep)</li><li>Visa &amp; Bitstamp (card, crypto)</li></ul></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRODUCTS -->
-  <section class="section" id="products">
+  <!-- GEOGRAPHY & SCALE -->
+  <section class="section section-dark" id="geography">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Product Portfolio</span>
-        <h2 class="section-title">The Robinhood <span class="gradient-text">Ecosystem</span></h2>
-        <p class="section-desc">From a simple trading app to a full-service financial platform</p>
+        <span class="section-tag">04 · Geography &amp; Scale</span>
+        <h2 class="section-title">From One Zip Code in <span class="gradient-text">California to the World</span></h2>
+        <p class="section-desc">Where Robinhood started, where it went, and how big it got</p>
       </div>
-      <div class="products-grid">
-        <div class="product-card glass-card featured"><div class="product-icon">📈</div><h3>Stock &amp; ETF Trading</h3><div class="product-badge">Core Product</div><p>Commission-free trading in thousands of US-listed stocks and ETFs. Supports fractional shares (as little as $1), real-time data, and market/limit/stop orders. Available 24/5 extended hours trading.</p><ul class="product-features"><li>Zero commissions on all trades</li><li>Fractional shares from $1</li><li>Extended hours trading (24/5)</li><li>Real-time quotes &amp; news</li><li>Dividend reinvestment (DRIP)</li></ul></div>
-        <div class="product-card glass-card"><div class="product-icon">🎛️</div><h3>Options Trading</h3><p>Commission-free options trading with an intuitive interface that simplified complex derivatives for everyday investors.</p><ul class="product-features"><li>$0 commission, $0.65/contract standard</li><li>Level 1–3 options approval</li><li>Available in IRA accounts</li><li>Options profit/loss calculator</li></ul></div>
-        <div class="product-card glass-card"><div class="product-icon">₿</div><h3>Crypto Trading</h3><p>24/7 cryptocurrency trading across 45+ digital assets including Bitcoin, Ethereum, Solana, Dogecoin and more.</p><ul class="product-features"><li>45+ cryptocurrencies</li><li>ETH &amp; SOL staking rewards</li><li>No trading minimums</li><li>24/7 markets</li><li>Tax reporting tools</li></ul></div>
-        <div class="product-card glass-card"><div class="product-icon">🏦</div><h3>IRA &amp; Retirement</h3><p>Traditional and Roth IRAs with an industry-first 1% contribution match (3% for Gold subscribers). Choose self-directed or professionally managed portfolios.</p><ul class="product-features"><li>1% standard / 3% Gold IRA match</li><li>Traditional &amp; Roth IRAs</li><li>Robinhood Strategies (managed)</li><li>401(k) rollovers supported</li></ul></div>
-        <div class="product-card glass-card"><div class="product-icon">⭐</div><h3>Robinhood Gold</h3><div class="product-badge">$5/month</div><p>The premium tier that unlocks higher interest rates, margin trading, professional research, and exclusive access to the Gold Credit Card.</p><ul class="product-features"><li>3.35% APY on uninvested cash</li><li>Morningstar research reports</li><li>$1,000 margin interest-free</li><li>Exclusive Gold Card access</li><li>Level 2 market data</li></ul></div>
-        <div class="product-card glass-card"><div class="product-icon">💳</div><h3>Robinhood Gold Card</h3><div class="product-badge">New 2024</div><p>A stainless steel Visa Signature credit card with an uncapped 3% cashback on all purchases and 5% back on travel.</p><ul class="product-features"><li>3% unlimited cashback (all categories)</li><li>5% on travel bookings</li><li>Stainless steel metal card</li><li>No foreign transaction fees</li><li>Rewards invest directly</li></ul></div>
-        <div class="product-card glass-card"><div class="product-icon">💰</div><h3>Cash Management</h3><p>A combined spending and savings account with a debit card, FDIC protection up to $2.5M through partner banks.</p><ul class="product-features"><li>FDIC insured up to $2.5M</li><li>Visa debit card</li><li>Direct deposit support</li><li>No monthly fees</li></ul></div>
-        <div class="product-card glass-card"><div class="product-icon">🖥️</div><h3>Legend (Desktop Platform)</h3><div class="product-badge">2024–2025</div><p>A professional-grade web trading platform with advanced charting, multi-asset dashboards, and real-time analytics.</p><ul class="product-features"><li>Advanced technical charting</li><li>Multi-asset dashboard</li><li>Options strategy builder</li><li>Real-time level 2 data</li></ul></div>
-        <div class="product-card glass-card"><div class="product-icon">🌍</div><h3>International Expansion</h3><div class="product-badge">Global</div><p>Robinhood has launched in the UK and EU, powered by the $200M Bitstamp acquisition. Plans to expand to Singapore and additional markets.</p><ul class="product-features"><li>UK: Stocks + crypto</li><li>EU: Crypto via Bitstamp</li><li>FX trading in select markets</li><li>Localized compliance</li></ul></div>
+      <div class="overview-grid">
+        <div class="overview-main glass-card">
+          <div class="card-icon-lg">🌍</div>
+          <h3>Local Roots, Global Ambitions</h3>
+          <p>Robinhood was incorporated in <strong>Menlo Park, California</strong> in 2013 and launched with a US-only waitlist that grew to nearly a million people before the app even opened. For its first decade, it was almost entirely a <strong>US retail-investing story</strong> — one app, one country, one market.</p>
+          <p>That changed from 2023 onward. Robinhood expanded into the <strong>United Kingdom</strong> (stocks and crypto), then accelerated into continental Europe by acquiring the Luxembourg-regulated crypto exchange <strong>Bitstamp for $200M in 2024</strong>, instantly giving it licensed access to <strong>EU markets</strong> and Bitstamp's existing international user base. Singapore and other Asian markets are the next stated targets.</p>
+          <p>The scale of that growth: from a <strong>10,000-person waitlist</strong> in December 2013 to <strong>27 million funded customers</strong> and <strong>$324 billion in platform assets</strong> by 2025 — a nearly 70% year-over-year jump in assets alone, run by a company of roughly 2,300 employees.</p>
+        </div>
+        <div class="overview-facts">
+          <div class="fact-card glass-card"><div class="fact-icon">📍</div><div class="fact-content"><span class="fact-label">Started</span><span class="fact-value">Menlo Park, California (2013)</span></div></div>
+          <div class="fact-card glass-card"><div class="fact-icon">🇬🇧</div><div class="fact-content"><span class="fact-label">Expanded To</span><span class="fact-value">United Kingdom (2023)</span></div></div>
+          <div class="fact-card glass-card"><div class="fact-icon">🇪🇺</div><div class="fact-content"><span class="fact-label">Expanded To</span><span class="fact-value">EU, via Bitstamp acquisition (2024)</span></div></div>
+          <div class="fact-card glass-card"><div class="fact-icon">👥</div><div class="fact-content"><span class="fact-label">Funded Customers</span><span class="fact-value">27M+ (2025)</span></div></div>
+          <div class="fact-card glass-card"><div class="fact-icon">💰</div><div class="fact-content"><span class="fact-label">Platform Assets</span><span class="fact-value">$324B (2025)</span></div></div>
+          <div class="fact-card glass-card"><div class="fact-icon">🌏</div><div class="fact-content"><span class="fact-label">Next Targets</span><span class="fact-value">Singapore &amp; broader Asia</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATUS TODAY -->
+  <section class="section" id="status">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">05 · Status Today</span>
+        <h2 class="section-title">Still Standing — and <span class="gradient-text">Still Growing</span></h2>
+        <p class="section-desc">Publicly traded, profitable, and expanding well beyond its trading-app roots</p>
+      </div>
+      <div class="overview-grid">
+        <div class="overview-main glass-card">
+          <div class="card-icon-lg">📊</div>
+          <h3>Independent, Public, and Profitable</h3>
+          <p>Robinhood is <strong>still operating and still independent</strong> — it has not been acquired, and it has not shut down. It went public on the <strong>NASDAQ under the ticker "HOOD"</strong> in July 2021 at a roughly $32 billion valuation, survived a brutal 2022 stock crash and two rounds of layoffs, and has since rebuilt into a consistently profitable company.</p>
+          <p>In 2025, Robinhood posted <strong>$4.5 billion in revenue</strong> and <strong>$1.9 billion in net income</strong>, with platform assets up 68% year-over-year — proof that the "free trading" model, once dismissed as unsustainable, can generate durable profit through interest income, subscriptions, and transaction-based revenue.</p>
+          <p>What this tells us: the friction Robinhood removed — high commissions and high minimums — is gone industry-wide, and it isn't coming back. Robinhood itself has evolved from a single-purpose trading app into a broader financial platform pushing into banking, credit cards, retirement accounts, and AI-driven trading, betting that the same underserved, younger customer base it won in 2013 will bring their entire financial life to the platform as they age into wealth.</p>
+        </div>
+        <div class="overview-facts">
+          <div class="fact-card glass-card"><div class="fact-icon">✅</div><div class="fact-content"><span class="fact-label">Operating Status</span><span class="fact-value">Active &amp; independent</span></div></div>
+          <div class="fact-card glass-card"><div class="fact-icon">📈</div><div class="fact-content"><span class="fact-label">Public Since</span><span class="fact-value">July 2021 (NASDAQ: HOOD)</span></div></div>
+          <div class="fact-card glass-card"><div class="fact-icon">💵</div><div class="fact-content"><span class="fact-label">2025 Revenue</span><span class="fact-value">$4.5B (net income $1.9B)</span></div></div>
+          <div class="fact-card glass-card"><div class="fact-icon">🧭</div><div class="fact-content"><span class="fact-label">Current Direction</span><span class="fact-value">Full-service finance + AI trading</span></div></div>
+        </div>
+      </div>
+      <h3 style="font-size:1.3rem; margin:48px 0 24px; text-align:center;">The Lasting Impact — What Robinhood Changed for Good</h3>
+      <div class="impact-cards">
+        <div class="impact-card glass-card"><div class="impact-number">$0</div><h3>Eliminated Commissions Industry-Wide</h3><p>By 2019, Robinhood's pressure forced every major US brokerage to drop trading fees to zero — saving American retail investors an estimated <strong>$1 billion+ per year</strong> in commissions.</p></div>
+        <div class="impact-card glass-card"><div class="impact-number">50M+</div><h3>New Investors Entered the Market</h3><p>Studies show that tens of millions of first-time investors opened their first brokerage account on Robinhood — dramatically expanding stock market participation among underrepresented demographics.</p></div>
+        <div class="impact-card glass-card"><div class="impact-number">$1</div><h3>Fractional Share Revolution</h3><p>By enabling fractional share investing from as little as $1, Robinhood made it possible for low-income investors to own shares of Amazon, Google, and Tesla.</p></div>
+        <div class="impact-card glass-card"><div class="impact-number">📱</div><h3>Mobile-First Investing Norm</h3><p>Robinhood proved that investing could be as simple as checking social media. Its mobile-first approach forced the entire industry to redesign their apps for younger, smartphone-native investors.</p></div>
+        <div class="impact-card glass-card"><div class="impact-number">₿</div><h3>Mainstreamed Crypto for Retail</h3><p>Robinhood was among the first major regulated platforms to offer free cryptocurrency trading, helping to mainstream Bitcoin and Ethereum adoption among retail investors.</p></div>
+        <div class="impact-card glass-card"><div class="impact-number">🏛️</div><h3>Sparked Regulatory Reform</h3><p>The GameStop saga triggered Congressional hearings on PFOF, market structure, and the power of retail investors — conversations that continue to shape US financial regulation today.</p></div>
       </div>
     </div>
   </section>
@@ -400,115 +449,6 @@
       </div>
     </div>
   </section>
-
-  <!-- CONTROVERSIES -->
-  <section class="section" id="controversies">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Challenges &amp; Controversies</span>
-        <h2 class="section-title">The <span class="gradient-text">Dark Side</span> of Disruption</h2>
-        <p class="section-desc">No revolutionary company comes without controversy</p>
-      </div>
-      <div class="controversies-grid">
-        <div class="controversy-card glass-card major">
-          <div class="controversy-level">🚨 Major</div>
-          <h3>The GameStop (GME) Crisis — January 2021</h3>
-          <div class="controversy-detail">
-            <p>In late January 2021, retail investors on Reddit's r/WallStreetBets coordinated to buy GameStop (GME) shares to squeeze short-sellers. The stock skyrocketed from ~$20 to nearly $500.</p>
-            <p>Robinhood abruptly <strong>restricted buying of GME</strong> and other "meme stocks" — while still allowing selling. The stated reason was to meet NSCC clearinghouse deposit requirements (which ballooned to $3 billion overnight).</p>
-            <p>The backlash was enormous: users accused Robinhood of siding with hedge funds, class-action lawsuits were filed, and CEO Vlad Tenev was hauled before Congress to testify.</p>
-          </div>
-          <div class="controversy-outcome"><strong>Outcome:</strong> FINRA fined Robinhood $57M in 2021, the largest FINRA fine at the time. Multiple lawsuits settled. Prompted SEC investigation into PFOF practices.</div>
-        </div>
-        <div class="controversy-card glass-card"><div class="controversy-level">⚠️ Significant</div><h3>Payment for Order Flow (PFOF) Ethics</h3><p>PFOF — Robinhood's primary revenue mechanism — has been criticized as a conflict of interest. Critics argue that routing orders to the highest-paying market maker, rather than the one offering the best price, may result in worse execution prices for retail users.</p><div class="controversy-outcome"><strong>Outcome:</strong> SEC settled a $65M PFOF-related enforcement in 2020. Ongoing regulatory debate continues globally.</div></div>
-        <div class="controversy-card glass-card"><div class="controversy-level">⚠️ Significant</div><h3>March 2020 Trading Outages</h3><p>During the historic COVID-19 market crash in March 2020, Robinhood's platform experienced multiple prolonged outages at precisely the moment users needed access most. Thousands of traders lost money.</p><div class="controversy-outcome"><strong>Outcome:</strong> Class-action lawsuits. FINRA fined Robinhood $70M for outages, misleading customers, and approving risky options trades for inexperienced traders.</div></div>
-        <div class="controversy-card glass-card"><div class="controversy-level">⚠️ Significant</div><h3>"Gamification" of Investing Criticism</h3><p>Robinhood's confetti animations (removed in 2021), push notifications celebrating trades, and game-like UI were criticized for encouraging impulsive, risky trading — especially among young, inexperienced investors.</p><div class="controversy-outcome"><strong>Outcome:</strong> Robinhood removed gamification features in 2021 and improved options disclosures after regulatory pressure.</div></div>
-        <div class="controversy-card glass-card"><div class="controversy-level">🔴 Regulatory</div><h3>Crypto &amp; Securities Regulatory Issues</h3><p>Robinhood Crypto was charged by the SEC in 2024 for operating as an unregistered securities exchange. Additionally, some cryptocurrencies offered on the platform were alleged to be unregistered securities.</p><div class="controversy-outcome"><strong>Outcome:</strong> Charges partially dropped after the SEC's stance on crypto softened under the new administration in 2025.</div></div>
-        <div class="controversy-card glass-card"><div class="controversy-level">📉 Corporate</div><h3>2022 Layoffs &amp; Stock Crash</h3><p>After the 2021 IPO euphoria, Robinhood's stock crashed from $85 to under $7 by mid-2022 as trading volumes dropped in the bear market. The company laid off ~23% (780 employees) in April 2022 and another 9% (150 employees) in August 2022.</p><div class="controversy-outcome"><strong>Outcome:</strong> Cost-cutting and diversification helped Robinhood return to profitability by 2023–2024.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPETITIVE LANDSCAPE -->
-  <section class="section section-dark" id="competition">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Competitive Analysis</span>
-        <h2 class="section-title">Robinhood vs <span class="gradient-text">The Competition</span></h2>
-        <p class="section-desc">How Robinhood stacks up against traditional brokers and fintech rivals</p>
-      </div>
-      <div class="comparison-table-wrap glass-card">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th class="robinhood-col">🏹 Robinhood</th>
-              <th>Charles Schwab</th>
-              <th>E*Trade</th>
-              <th>Webull</th>
-              <th>Public</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Stock Commissions</td><td class="robinhood-col positive">$0</td><td class="positive">$0</td><td class="positive">$0</td><td class="positive">$0</td><td class="positive">$0</td></tr>
-            <tr><td>Options Per Contract</td><td class="robinhood-col positive">$0</td><td class="neutral">$0.65</td><td class="neutral">$0.65</td><td class="positive">$0</td><td class="negative">N/A</td></tr>
-            <tr><td>Fractional Shares</td><td class="robinhood-col positive">✅ From $1</td><td class="positive">✅</td><td class="positive">✅</td><td class="negative">❌</td><td class="positive">✅</td></tr>
-            <tr><td>Crypto Trading</td><td class="robinhood-col positive">✅ 45+ coins</td><td class="neutral">✅ (limited)</td><td class="neutral">✅ (limited)</td><td class="positive">✅</td><td class="positive">✅</td></tr>
-            <tr><td>IRA Accounts</td><td class="robinhood-col positive">✅ + 3% match</td><td class="positive">✅</td><td class="positive">✅</td><td class="positive">✅</td><td class="negative">❌</td></tr>
-            <tr><td>Credit Card</td><td class="robinhood-col positive">✅ 3% cashback</td><td class="neutral">✅ 1.5%</td><td class="negative">❌</td><td class="negative">❌</td><td class="negative">❌</td></tr>
-            <tr><td>Bank Account</td><td class="robinhood-col positive">✅</td><td class="positive">✅</td><td class="positive">✅</td><td class="positive">✅</td><td class="negative">❌</td></tr>
-            <tr><td>Research Tools</td><td class="robinhood-col neutral">🌟 Gold only</td><td class="positive">✅ Excellent</td><td class="positive">✅ Excellent</td><td class="neutral">✅ Good</td><td class="neutral">✅ Basic</td></tr>
-            <tr><td>Mobile UX</td><td class="robinhood-col positive">⭐⭐⭐⭐⭐</td><td class="neutral">⭐⭐⭐</td><td class="neutral">⭐⭐⭐</td><td class="positive">⭐⭐⭐⭐</td><td class="positive">⭐⭐⭐⭐</td></tr>
-            <tr><td>PFOF Usage</td><td class="robinhood-col neutral">Yes</td><td class="neutral">Yes</td><td class="neutral">Yes</td><td class="neutral">Yes</td><td class="positive">No (tipping)</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- FUTURE -->
-  <section class="section" id="future">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Future Outlook</span>
-        <h2 class="section-title">The Road <span class="gradient-text">Ahead</span></h2>
-        <p class="section-desc">Robinhood's vision for the next decade of finance</p>
-      </div>
-      <div class="future-grid">
-        <div class="future-card glass-card"><div class="future-icon">🌍</div><h3>Global Expansion</h3><p>Robinhood is aggressively expanding internationally through its Bitstamp acquisition and organic growth. Target markets include UK, Singapore, Australia, and eventually emerging markets across Asia and Latin America. The goal: become the world's largest retail investment platform.</p></div>
-        <div class="future-card glass-card"><div class="future-icon">🤖</div><h3>AI-Powered Finance</h3><p>Robinhood is integrating AI across its platform — from AI-powered trade recommendations to "agentic" trading bots that can execute strategies automatically. The Legend platform serves as the testing ground for these professional-grade AI tools.</p></div>
-        <div class="future-card glass-card"><div class="future-icon">💰</div><h3>The Great Wealth Transfer</h3><p>An estimated $84 trillion in wealth will pass from Baby Boomers to Millennials and Gen-Z over the next 20 years. Robinhood is strategically positioning itself to capture this historic transfer — with younger generations already deeply embedded in its ecosystem.</p></div>
-        <div class="future-card glass-card"><div class="future-icon">🏦</div><h3>Full Banking Platform</h3><p>Robinhood is moving toward becoming a full-service bank — with checking, savings, credit cards, mortgages, and wealth management all under one roof. The TradePMR acquisition is a key step in capturing high-net-worth advisory relationships.</p></div>
-        <div class="future-card glass-card"><div class="future-icon">📈</div><h3>Futures &amp; Derivatives Growth</h3><p>Expanding futures trading (commodities, indices, FX, crypto) with varying leverage levels, particularly in EU markets. This positions Robinhood to compete with CME Group and traditional futures brokers.</p></div>
-        <div class="future-card glass-card"><div class="future-icon">🔐</div><h3>Regulatory Navigation</h3><p>As crypto regulations mature under the new US framework and international rules evolve, Robinhood is investing heavily in compliance infrastructure. A clearer regulatory environment could unlock significant new products and markets.</p></div>
-      </div>
-      <div class="mission-box glass-card">
-        <div class="mission-quote-mark">"</div>
-        <blockquote>We started Robinhood with the idea that the financial system should work for everyone, not just the wealthy. That mission is more important now than ever. We're just getting started.</blockquote>
-        <cite>— Vlad Tenev, CEO, Robinhood</cite>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINTECH IMPACT -->
-  <section class="section section-dark" id="impact">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Fintech Impact</span>
-        <h2 class="section-title">How Robinhood <span class="gradient-text">Changed Finance</span></h2>
-        <p class="section-desc">The lasting legacy of America's most disruptive brokerage</p>
-      </div>
-      <div class="impact-cards">
-        <div class="impact-card glass-card"><div class="impact-number">$0</div><h3>Eliminated Commissions Industry-Wide</h3><p>By 2019, Robinhood's pressure forced every major US brokerage to drop trading fees to zero — saving American retail investors an estimated <strong>$1 billion+ per year</strong> in commissions.</p></div>
-        <div class="impact-card glass-card"><div class="impact-number">50M+</div><h3>New Investors Entered the Market</h3><p>Studies show that tens of millions of first-time investors opened their first brokerage account on Robinhood — dramatically expanding stock market participation among underrepresented demographics.</p></div>
-        <div class="impact-card glass-card"><div class="impact-number">$1</div><h3>Fractional Share Revolution</h3><p>By enabling fractional share investing from as little as $1, Robinhood made it possible for low-income investors to own shares of Amazon, Google, and Tesla.</p></div>
-        <div class="impact-card glass-card"><div class="impact-number">📱</div><h3>Mobile-First Investing Norm</h3><p>Robinhood proved that investing could be as simple as checking social media. Its mobile-first approach forced the entire industry to redesign their apps for younger, smartphone-native investors.</p></div>
-        <div class="impact-card glass-card"><div class="impact-number">₿</div><h3>Mainstreamed Crypto for Retail</h3><p>Robinhood was among the first major regulated platforms to offer free cryptocurrency trading, helping to mainstream Bitcoin and Ethereum adoption among retail investors.</p></div>
-        <div class="impact-card glass-card"><div class="impact-number">🏛️</div><h3>Sparked Regulatory Reform</h3><p>The GameStop saga triggered Congressional hearings on PFOF, market structure, and the power of retail investors — conversations that continue to shape US financial regulation today.</p></div>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-content">
